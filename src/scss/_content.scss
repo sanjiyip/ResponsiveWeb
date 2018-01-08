@@ -12,29 +12,22 @@ main {
   width: 100%;
   display: flex;
   background-color: #7c7365;
-  font-size: 1.5rem;  
+  font-size: 1.5rem;
   justify-content: space-between;
   padding: 0 4rem;
-  &__left {
-    display: flex;
-  }
-  &__right {
-    display: flex;
-    align-items: center;    
-    &> a {
-      text-align: center;
-      color: #fff;
-    }
-  }
+
   &__content {
     display: flex;
-    align-items: center;
+    align-self: center;
     padding: 1rem;
     color: #fff;
     span {
+      display: inline;
       line-height: 3rem;
     }
-
+    @media only screen and (max-width: 50em) {
+      padding: 0;
+    }
   }
   &__num {
     color: #ff9900;
@@ -43,8 +36,26 @@ main {
     margin: 0 1rem;
     padding: 0 1rem;
     border-radius: 3px;
-    box-shadow: 1px 1px 1px #333 inset;    
-    background-color: #fff;    
+    box-shadow: 1px 1px 1px #333 inset;
+    background-color: #fff;
+    @media only screen and (max-width: 50em) {
+      margin: 0;
+      padding: 0 0.2rem;
+      font-size: 1.6rem;
+      box-shadow: none;
+      letter-spacing: inherit;
+      background: transparent;
+    }
+  }
+  & > a {
+    align-content: center;
+    align-self: center;
+    color: #fff;
+  }
+  @media only screen and (max-width: 37.5em) {
+    flex-flow: column wrap;
+    justify-content: center;
+    padding: 1rem 0;
   }
 }
 
@@ -61,7 +72,7 @@ main {
   justify-content: center;
   margin: 2em;
   &__item {
-    display: flex;    
+    display: flex;
     flex: 1;
     flex-flow: row nowrap;
     background-color: #fff;
@@ -69,20 +80,51 @@ main {
     margin-right: 1rem;
     &:last-child {
       margin-right: 0;
+      @media only screen and (max-width: 30em) {
+        margin-bottom: 0;
+      }
     }
-    &>h3 {
+    & > h3 {
       margin: 0;
       padding: 1.3rem;
-      width: 40%;
-      font-size: 3.3rem;  
+      width: 100%;
+      font-size: 3.3rem;
       color: #ff9900;
       text-align: center;
+      @media only screen and (max-width: 50em) {
+        padding: 0;
+        font-size: 2.6rem;
+      }
+      @media only screen and (max-width: 30em) {
+        /* 样式 */
+      }
     }
-    &>p {
-      width: 55%;
+    & > p {
+      width: 100%;
       color: #999;
       line-height: 2rem;
+      @media only screen and (max-width: 50em) {
+        text-align: center;
+        margin: 0;
+      }
+      @media only screen and (max-width: 30em) {
+        text-align: left;
+      }
     }
+    @media only screen and (max-width: 50em) {
+      flex-flow: column nowrap;
+      align-items: center;
+      padding: 1rem;
+    }
+    @media only screen and (max-width: 30em) {
+      margin-top: 1rem;
+      margin-right: 0;
+      flex-flow: row nowrap;
+    }
+  }
+  @media only screen and (max-width: 30em) {
+    flex-flow: column nowrap;
+    width: 96%;
   }
 }
 
@@ -92,7 +134,12 @@ main {
   display: flex;
   justify-content: space-between;
   background-color: #fff;
-  box-shadow : 0 0 4px #ccc;
+  box-shadow: 0 0 4px #ccc;
+
+  @media only screen and (max-width: 30em) {
+    width: 96%;
+  }
+
   a:first-child {
     width: 70%;
     font-size: 1.4rem;
@@ -102,16 +149,24 @@ main {
     overflow: hidden;
     white-space: nowrap;
     &::before {
-      content: "最新公告： "
+      content: "最新公告： ";
+      color: #aaa;
+    }
+    & > span {
+      color: #999;
+      @media only screen and (max-width: 30em) {
+        display: none;
+      }
     }
   }
   a:last-child {
     margin: 0 2rem;
     color: #ff9900;
-    line-height: 3rem;    
+    line-height: 3rem;
   }
 }
 
+// 产品
 .o-product {
   width: 90%;
   display: flex;
@@ -120,9 +175,17 @@ main {
   background-color: #f5f9fa;
   border-top: 2px solid #ff9900;
   box-shadow: 0 0 4px #ccc;
-  margin: 2rem 0;
+  margin: 2rem 0 0;
+  @media only screen and (max-width: 50em) {
+    flex-flow: column nowrap;
+    margin: 1.5rem 0 0;
+  }
+  @media only screen and (max-width: 30em) {
+    width: 96%;
+  }
+
   // 左侧栏
-  &>h2 {
+  & > h2 {
     display: flex;
     flex-flow: column;
     width: 20%;
@@ -130,12 +193,48 @@ main {
     text-align: center;
     color: #635c51;
     margin-top: 3rem;
-    & > em {
-      font-size: 1.6rem;
-      margin-top: 1rem;
+    @media only screen and (max-width: 50em) {
+      width: 100%;
+      flex-flow: row nowrap;
+      justify-content: center;
+      margin-top: 2rem;
+      font-size: 2.2rem;
     }
-    & :first-child {
-      margin-top: 4rem;
+    @media only screen and (max-width: 30em) {
+      flex-flow: column nowrap;
+    }
+    & > span {
+      display: flex;
+      flex-flow: column;
+      @media only screen and (max-width: 50em) {
+        flex-flow: row nowrap;
+      }
+      @media only screen and (max-width: 30em) {
+        flex-flow: row nowrap;
+        justify-content: center;
+      }
+
+      em {
+        font-size: 1.6rem;
+        margin-top: 1rem;
+        @media only screen and (max-width: 50em) {
+          margin: 0.5rem;
+          align-self: flex-end;
+          font-size: 1.2rem;
+        }
+        @media only screen and (max-width: 30em) {
+          align-self: center;
+        }
+      }
+      & :first-child {
+        margin-top: 4rem;
+        @media only screen and (max-width: 50em) {
+          margin-top: 0;
+        }
+        @media only screen and (max-width: 30em) {
+          margin-top: 0.5rem;
+        }
+      }
     }
   }
   // 右侧栏
@@ -145,28 +244,43 @@ main {
     width: 80%;
     background-color: #fff;
     border-left: 1px solid #eee;
+    @media only screen and (max-width: 50em) {
+      width: 100%;
+    }
   }
-
   &__item {
     width: 100%;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
   }
   &__item + &__item {
     border-top: 1px solid #eee;
-  }
+        @media only screen and (max-width: 30em) {
+        }
 
+  }
   // 月份
   &__months {
-    flex: 2;
+    width: 25%;
     text-align: center;
     font-size: 1.4rem;
+    @media only screen and (max-width: 50em) {
+      margin-bottom: 0;
+    }
+    @media only screen and (max-width: 30em) {
+      width: 30%;
+    }
+
+
     & > em {
       margin-right: 0.4rem;
       font-size: 3.6rem;
       color: #8b999d;
-      font-weight: normal; 
-      font-style: normal;  
+      font-weight: normal;
+      font-style: normal;
+      @media only screen and (max-width: 50em) {
+        font-size: 2.4rem;
+      }
     }
     & > i {
       font-size: 1.2rem;
@@ -174,23 +288,34 @@ main {
       color: #999;
     }
   }
-
   // 具体信息
   &__info {
-    flex: 4;
+    width: 60%;
     border-left: 1px solid #eee;
     border-right: 1px solid #eee;
     display: flex;
     text-align: center;
     padding: 1rem;
+    @media only screen and (max-width: 50em) {
+      font-size: 1.2rem;
+      padding: 1rem 1rem 0;
+  }
+  @media only screen and (max-width: 30em) {
+    width: 70%;
+          border: none;
+
+    
+  }
+
+
     & > p {
       width: 50%;
       display: flex;
-      flex-flow: column nowrap; 
-      &>span {
+      flex-flow: column nowrap;
+      & > span {
         font-size: 2.4rem;
         color: #ff9900;
-        &>i {
+        & > i {
           font-size: 1.2rem;
           font-style: normal;
           color: #999;
@@ -200,11 +325,16 @@ main {
   }
   // 购买按钮
   &__button {
-    flex: 1;
+    width: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
-    &>a {
+    padding: 1rem;
+          @media only screen and (max-width: 30em) {
+            width: 100%;
+          }
+
+    & > a {
       width: 80%;
       border-radius: 5px;
       max-width: 12rem;
@@ -213,16 +343,21 @@ main {
       text-align: center;
       background-color: #ff9900;
       color: #fff;
+                @media only screen and (max-width: 30em) {
+                  width: 100%;
+      max-width: 24rem;
+      margin-bottom: 1rem;
+
+                  
+                }
 
     }
   }
-
   .disable {
     background-color: #ccc !important;
     cursor: not-allowed;
   }
 }
-
 
 .o-bottom-layout {
   display: flex;
@@ -231,38 +366,49 @@ main {
   width: 100%;
   background-color: #fff;
   border-top: 2px solid #eee;
-  
+  margin-top: 3rem;
   .o-bottom-nav {
     display: flex;
     justify-content: space-between;
     background-color: #fff;
     width: 90%;
-    
+
     &__brand {
       width: 20%;
       height: 35px;
       filter: grayscale(100%);
       background: url(../img/logo@1x.png) no-repeat;
-      background-size: 150px 35px
+      background-size: 150px 35px;
+      @media only screen and (max-width: 50em) {
+        display: none;
+      }
     }
 
     // 下部导航
-    &>ul {
+    & > ul {
       width: 15%;
-      &>li {
+      @media only screen and (max-width: 50em) {
+        width: 20%;
+      }
+
+      & > li {
         font-size: 1.4rem;
         line-height: 2.4rem;
+        @media only screen and (max-width: 50em) {
+          font-size: 1.2rem;
+          line-height: 2rem;
+        }
         color: #666;
       }
       .o-bottom-nav__title {
         font-size: 1.6rem;
         line-height: 3rem;
         color: #333;
+        @media only screen and (max-width: 50em) {
+          font-size: 1.2rem;
+          line-height: 2rem;
+        }
       }
     }
   }
-
-
 }
-
-

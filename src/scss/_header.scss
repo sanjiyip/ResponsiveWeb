@@ -10,17 +10,35 @@ header {
   border-bottom: 1px #ecc000 solid;
   display: flex;
   justify-content: space-between;
-
+  &__phone {
+    /* 表示 0-480px 之内的样式 */
+    @media only screen and (max-width: 30em) {
+      display: none;
+    }
+  }
   // 顶部nav的样式
   ul {
     display: flex;
-    li+li {
+    li + li {
       border-left: 1px solid #999;
     }
     a {
       color: #fff;
       padding: 0 1.5rem;
-    }   
+      /* 表示 0-800px 之内的样式 */
+      @media only screen and (max-width: 50em) {
+        padding: 0 1rem;
+      }
+    }
+    @media only screen and (max-width: 30em) {
+      li:nth-child(3),
+      li:nth-child(4) {
+        display: none;
+      }
+    }
+  }
+  @media only screen and (max-width: 30em) {
+    justify-content: flex-end;
   }
 }
 
@@ -32,23 +50,54 @@ header {
     display: flex;
     align-items: center;
     padding: 0 1.5rem;
+    @media only screen and (max-width: 50em) {
+      justify-content: center;
+      margin: 1.5rem 0 0.5rem;
+    }
+
   }
   ul {
     display: flex;
     li {
       border-left: 1px solid #f0ede9;
       a {
-        padding: 0 3rem;
+        padding: 0 1.9rem;
         line-height: 5.5rem;
         font-size: 1.6rem;
         font-weight: bold;
         color: #7c7a65;
         text-decoration: none;
-        &:hover,&:active {
-          color: #ecc000;
+        &:hover,
+        &:active {
+          color: #ffb300;
+        }
+        @media only screen and (max-width: 30em) {
+          padding: 0 0.5rem;
+          font-weight: normal;
         }
 
       }
+      @media only screen and (max-width: 50em) {
+        border-left: none;
+      }
+
     }
+    @media only screen and (max-width: 50em) {
+      justify-content: center;
+    }
+
   }
+  @media only screen and (max-width: 50em) {
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+
+  @media only screen and (min-width: 30.062em) and (max-width: 50em) {
+
+  }
+
+  @media only screen and (max-width: 30em) {
+
+  }
+
 }

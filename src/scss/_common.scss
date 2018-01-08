@@ -4,8 +4,11 @@
 }
 
 html {
+  min-width: 100%;
   font-size: 62.5%;
   color: #222;
+  overflow-x:hidden;
+
 }
 
 ::selection {
