@@ -1,0 +1,85 @@
+// clearfix
+.clearfix {
+  @include clearfix();
+}
+
+// Visibility utilities
+
+.visible {
+  @include invisible(visible);
+}
+
+.invisible {
+  // 那块空间隐藏了，但是保留了位置
+  @include invisible(hidden);
+}
+
+// 定位写法
+$positions: static, relative, absolute, fixed, sticky;
+@each $position in $positions {
+  .position-#{$position} {
+    position: $position !important;
+  }
+}
+
+// 固定在顶部
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+// 固定在底部
+.fixed-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+// 粘在顶部
+.sticky-top {
+  @supports (position: sticky) {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+  }
+}
+
+
+//
+// Text
+//
+// Alignment
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-truncate {
+  @include text-truncate;
+}
+
+// Transformation
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+
+.font-italic {
+  font-style: italic !important;
+}

@@ -1,0 +1,52 @@
+// 基本默认样式
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  color: #222;
+}
+
+::selection {
+  // 选中时发生的css变化
+  background-color: #b3d4fc;
+  text-shadow: none;
+}
+
+ul {
+  // 为了让li顶格
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+// 工具样式
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+
+// 开始
+
+body {
+  margin:0;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  background-color: #f7f7f7;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+  &:hover, &:active {
+    color: #0ae;
+    text-decoration: underline;    
+  }
+}

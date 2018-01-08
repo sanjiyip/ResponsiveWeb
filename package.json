@@ -1,0 +1,34 @@
+{
+  "name": "ResponsiveWeb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --output-style expanded -o src/css/ src/scss/ | postcss -u autoprefixer -r src/css/*",
+    "watch-scss": "onchange './src/scss/*.scss' -- npm run scss",
+    "babel": "babel src/js/mainES6.js -o src/js/main.js",
+    "build": "babel src -d lib",
+    "watch-js": "onchange './src/js/mainES6.js' -- npm run babel",
+    "watchAll": "npm-run-all --parallel watch-*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^4.0.0-beta.3",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.9",
+    "autoprefixer": "^7.1.6",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "director": "^1.2.8",
+    "eslint": "^4.13.0",
+    "node-sass": "^4.6.1",
+    "npm-run-all": "^4.1.2",
+    "onchange": "^3.2.1",
+    "parallelshell": "^3.0.2",
+    "postcss-bem": "^0.4.1",
+    "postcss-cli": "^4.1.1",
+    "sass": "^1.0.0-beta.3"
+  }
+}

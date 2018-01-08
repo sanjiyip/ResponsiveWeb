@@ -1,0 +1,268 @@
+main {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+// 交易量
+
+.o-transaction {
+  width: 100%;
+  display: flex;
+  background-color: #7c7365;
+  font-size: 1.5rem;  
+  justify-content: space-between;
+  padding: 0 4rem;
+  &__left {
+    display: flex;
+  }
+  &__right {
+    display: flex;
+    align-items: center;    
+    &> a {
+      text-align: center;
+      color: #fff;
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    color: #fff;
+    span {
+      line-height: 3rem;
+    }
+
+  }
+  &__num {
+    color: #ff9900;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    margin: 0 1rem;
+    padding: 0 1rem;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #333 inset;    
+    background-color: #fff;    
+  }
+}
+
+// 广告区
+
+.o-ad {
+  display: none;
+}
+
+// 特征
+.o-feature {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: 2em;
+  &__item {
+    display: flex;    
+    flex: 1;
+    flex-flow: row nowrap;
+    background-color: #fff;
+    box-shadow: 0 0 4px #ccc;
+    margin-right: 1rem;
+    &:last-child {
+      margin-right: 0;
+    }
+    &>h3 {
+      margin: 0;
+      padding: 1.3rem;
+      width: 40%;
+      font-size: 3.3rem;  
+      color: #ff9900;
+      text-align: center;
+    }
+    &>p {
+      width: 55%;
+      color: #999;
+      line-height: 2rem;
+    }
+  }
+}
+
+// 公告
+.o-notice {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow : 0 0 4px #ccc;
+  a:first-child {
+    width: 70%;
+    font-size: 1.4rem;
+    line-height: 3rem;
+    margin-left: 2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    &::before {
+      content: "最新公告： "
+    }
+  }
+  a:last-child {
+    margin: 0 2rem;
+    color: #ff9900;
+    line-height: 3rem;    
+  }
+}
+
+.o-product {
+  width: 90%;
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 1.4rem;
+  background-color: #f5f9fa;
+  border-top: 2px solid #ff9900;
+  box-shadow: 0 0 4px #ccc;
+  margin: 2rem 0;
+  // 左侧栏
+  &>h2 {
+    display: flex;
+    flex-flow: column;
+    width: 20%;
+    font-size: 2.4rem;
+    text-align: center;
+    color: #635c51;
+    margin-top: 3rem;
+    & > em {
+      font-size: 1.6rem;
+      margin-top: 1rem;
+    }
+    & :first-child {
+      margin-top: 4rem;
+    }
+  }
+  // 右侧栏
+  &__content {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 80%;
+    background-color: #fff;
+    border-left: 1px solid #eee;
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  &__item + &__item {
+    border-top: 1px solid #eee;
+  }
+
+  // 月份
+  &__months {
+    flex: 2;
+    text-align: center;
+    font-size: 1.4rem;
+    & > em {
+      margin-right: 0.4rem;
+      font-size: 3.6rem;
+      color: #8b999d;
+      font-weight: normal; 
+      font-style: normal;  
+    }
+    & > i {
+      font-size: 1.2rem;
+      font-style: normal;
+      color: #999;
+    }
+  }
+
+  // 具体信息
+  &__info {
+    flex: 4;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    display: flex;
+    text-align: center;
+    padding: 1rem;
+    & > p {
+      width: 50%;
+      display: flex;
+      flex-flow: column nowrap; 
+      &>span {
+        font-size: 2.4rem;
+        color: #ff9900;
+        &>i {
+          font-size: 1.2rem;
+          font-style: normal;
+          color: #999;
+        }
+      }
+    }
+  }
+  // 购买按钮
+  &__button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &>a {
+      width: 80%;
+      border-radius: 5px;
+      max-width: 12rem;
+      line-height: 4rem;
+      text-decoration: none;
+      text-align: center;
+      background-color: #ff9900;
+      color: #fff;
+
+    }
+  }
+
+  .disable {
+    background-color: #ccc !important;
+    cursor: not-allowed;
+  }
+}
+
+
+.o-bottom-layout {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 2px solid #eee;
+  
+  .o-bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    width: 90%;
+    
+    &__brand {
+      width: 20%;
+      height: 35px;
+      filter: grayscale(100%);
+      background: url(../img/logo@1x.png) no-repeat;
+      background-size: 150px 35px
+    }
+
+    // 下部导航
+    &>ul {
+      width: 15%;
+      &>li {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        color: #666;
+      }
+      .o-bottom-nav__title {
+        font-size: 1.6rem;
+        line-height: 3rem;
+        color: #333;
+      }
+    }
+  }
+
+
+}
+
+
