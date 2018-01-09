@@ -71,6 +71,7 @@ main {
   &__item {
     display: flex;
     flex: 1;
+    
     flex-flow: row nowrap;
     background-color: #fff;
     box-shadow: 0 0 4px #ccc;
