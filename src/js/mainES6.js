@@ -1,1 +1,9 @@
-let a = {a:1,b:2};
+$(document).ready(function() {
+  $(".owl-carousel").owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true
+  });
+});

@@ -7,7 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>理财网</title>
   <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./js/vendor/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="./js/vendor/OwlCarousel2-2.2.1/dist/assets/owl.theme.default.min.css">
   <link rel="stylesheet" href="./css/main.css">
+
 </head>
 
 <body>
@@ -81,17 +84,32 @@
     </section>
 
     <!-- 广告区 -->
-    <section class="o-ad">
-      <div class="o-add__item">
-        <img src="./img/ad001.png" alt="">
+    <div class="owl-carousel owl-theme">
+      <div>
+        <picture>
+          <source media="(min-width: 50em)" srcset="./img/ad001-l.png">
+          <source media="(min-width: 39em)" srcset="./img/ad001-m.png">
+          <img src="./img/ad001.png" alt="">
+        </picture>
+
       </div>
-      <div class="o-add__item">
-        <img src="./img/ad002.png" alt="">
+      <div>
+        <picture>
+          <source media="(min-width: 50em)" srcset="./img/ad002-l.png">
+          <source media="(min-width: 39em)" srcset="./img/ad002-m.png">
+          <img src="./img/ad002.png" alt="">
+        </picture>
+
       </div>
-      <div class="o-add__item">
-        <img src="./img/ad003.png" alt="">
+      <div>
+        <picture>
+          <source media="(min-width: 50em)" srcset="./img/ad003-l.png">
+          <source media="(min-width: 39em)" srcset="./img/ad003-m.png">
+          <img src="./img/ad003.png" alt="">
+        </picture>
       </div>
-    </section>
+    </div>
+
 
     <!-- 特征 -->
     <section class="o-feature">
@@ -267,7 +285,7 @@
       <div class="o-product__content">
         <!-- 3个月产品 -->
         <div class="o-product__item">
-          
+
           <h3 class="o-product__months">
             <em>3</em>个月
             <br>
@@ -456,7 +474,6 @@
         </ul>
       </nav>
     </div>
-
   </main>
 
   <!-- footer -->
@@ -487,5 +504,9 @@
     <p>深圳某互联网金融公司 版权所有 ® 2017-2018</p>
   </footer>
 </body>
+<script src="./js/vendor/jquery-3.2.1.min.js"></script>
+<script src="./js/vendor/OwlCarousel2-2.2.1/dist/owl.carousel.min.js"></script>
+
+<script src="./js/main.js"></script>
 
 </html>
